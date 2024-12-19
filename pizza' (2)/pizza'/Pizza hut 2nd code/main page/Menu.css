@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #e31837;
+    color: white;
+    padding: 1rem 2rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nav-container  {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 00px;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    white-space: nowrap;
+}
+
+
+
+.nav-button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: black;
+}
+
+.nav-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* New Add to Order button style */
+.add-to-order-button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px; 
+    border: 2px solid white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.add-to-order-button:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: black;
+}
+
+.add-to-order-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-title {
+    text-align: center;
+    color: #e31837;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #e31837;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #e31837;
+}
+
+.item-details {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.item-details h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.price {
+    color: #e31837;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .nav-container {
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .nav-button {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item img {
+        height: 180px;
+    }
+}

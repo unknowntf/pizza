@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login page.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <script type="module" src="firebase.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="nav-container">
+                <a href="index.html">
+                    <img src="image/pizza2.jpg" alt="Logo" class="header-logo">
+                </a>
+                <nav>
+                    <ul id="nav-links">
+                        <li><a href="index.html" class="nav-button">Home</a></li>
+                        <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                        <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                        <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                        <li><a href="login page.html" class="nav-button">Login</a></li>
+                        <li><a href="register.html" class="nav-button active">Register</a></li>
+                        <li><a href="review.html" class="nav-button active">Review</a></li>
+                        <li><a href="my order.html" class="nav-button">My Order</a></li>
+                        <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                        <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                        <li><a href="career.html" class="nav-button">Career</a></li>
+                        <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <h2>Register</h2>
+
+            <form method="post" action="">
+                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-group">
+                   <i class="fas fa-user"></i>
+                   <input type="text"  id="fName" placeholder="First Name" required>
+                   <label for="fname">First Name</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text"  id="lName" placeholder="Last Name" required>
+                    <label for="lName">Last Name</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email"  id="rEmail" placeholder="Email" required>
+                    <label for="rEmail">Email</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rPassword"  placeholder="Password" required>
+                    <label for="rPassword">Password</label>
+                </div>
+               <button class="btn" id="submitSignUp" >Sign Up</button>
+              </form>
+            <!-- <form  method="post" action="">
+                <label for="username">Username:</label>
+                <input type="text" id="username"  required>
+                <label for="Email">Email:</label>
+                <input type="text" id="Email"  required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <button type="submit" id="submitSignUp">Register</button>
+                <p>Already have an account? <a href="login page.html">Login here</a>.</p>
+            </form> -->
+        </div>
+    </main>
+    <script>
+        // Select all elements with the 'nav-button' class and style them
+        const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733'; 
+                button.style.borderRadius = '5px';
+            });
+    </script>
+</body>
+</html>

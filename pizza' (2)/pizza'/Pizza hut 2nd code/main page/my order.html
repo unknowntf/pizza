@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Order - Pizza Hut Grenada</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="my order.css">
+    <script>
+        window.onload = function () {
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            const orderList = document.getElementById('order-list');
+            const totalPriceElement = document.getElementById('total-price');
+            const clearOrderButton = document.getElementById('clear-order');
+
+            // Display orders or show empty message
+            if (orders.length === 0) {
+                orderList.innerHTML = '<p>Your order is empty.</p>';
+                clearOrderButton.style.display = 'none'; // Hide Clear Order button if no orders
+                return;
+            }
+
+            let totalPrice = 0;
+
+            // Display each item in the order
+            orders.forEach(order => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${order.name} - $${order.price}`;
+                orderList.appendChild(listItem);
+
+                totalPrice += parseFloat(order.price);
+            });
+
+            // Update total price
+            totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
+            // Clear order functionality
+            clearOrderButton.addEventListener('click', () => {
+                localStorage.removeItem('orders'); // Clear orders from localStorage
+                location.reload(); // Reload the page to reflect changes
+            });
+            // Handle Checkout Button Logic
+const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.addEventListener('click', () => {
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    
+    if (orders.length === 0) {
+        alert("Your order is empty. Please add items before checking out.");
+    } else {
+        window.location.href = 'checkout.html'; // Redirect to the checkout page
+    }
+});
+
+             // Style navigation buttons
+             const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733';
+                button.style.borderRadius = '5px';
+            });
+        };
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza Hut logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button">Review</a></li>
+                    <li><a href="my-order.html" class="nav-button active">My Order</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="order-container">
+        <h1 class="page-title">My Order</h1>
+        <div class="dataContainer" id="dataContainer"></div>
+        <ul id="order-list" class="order-list"></ul>
+        <h2 id="total-price" class="total-price">Total: $0.00</h2>
+        <button id="clear-order" class="clear-order-button">Clear Order</button>
+        <button id="checkout-button" class="checkout-button">Proceed to Checkout</button>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Pizza Hut Grenada. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Pizza Hut Grenada</title>
+
+    <!-- Favicon for the Webpage -->
+    <link rel="icon" type="image/ico" href="favicon.ico">
+
+    <!-- Link to External CSS for Styling -->
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <div class="nav-container">
+                <!-- Logo Linking Back to Home Page -->
+                <a href="index.html">
+                    <img src="image/pizza2.jpg" alt="Logo" class="header-logo">
+                </a>
+                
+                <!-- Navigation Bar -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="nav-button">Home</a></li>
+                        <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                        <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                        <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                        <li><a href="login page.html" class="nav-button">Login</a></li>
+                        <li><a href="register.html" class="nav-button">Register</a></li>
+                        <li><a href="review.html" class="nav-button active">Review</a></li>
+                        <li><a href="my order.html" class="nav-button">My Order</a></li>
+                        <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                        <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                        <li><a href="career.html" class="nav-button">Career</a></li>
+                        <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="checkout-container">
+            <h1>Checkout</h1>
+
+            <!-- Order Summary -->
+            <section class="order-summary">
+                <h2>Order Summary</h2>
+                <ul id="order-list"></ul>
+                <h3 id="total-price">Total: $0.00</h3>
+            </section>
+
+            <!-- Customer Information -->
+            <section class="customer-info">
+                <h2>Customer Information</h2>
+                <form id="checkout-form">
+                    <label for="customer-name">Full Name:</label>
+                    <input type="text" id="customer-name" placeholder="Enter your full name" required>
+
+                    <label for="customer-email">Email:</label>
+                    <input type="email" id="customer-email" placeholder="Enter your email" required>
+
+                    <label for="customer-address">Delivery Address:</label>
+                    <input type="text" id="customer-address" placeholder="Enter your address" required>
+
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" required>
+                        <option value="">-- Select a payment method --</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Cash on Delivery">Cash on Delivery</option>
+                    </select>
+                    
+                    <button type="submit" id="place-order">Place Order</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Pizza Hut Grenada. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+
+    <!-- JavaScript to Populate and Handle Checkout -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderList = document.getElementById('order-list');
+            const totalPriceElement = document.getElementById('total-price');
+            const checkoutForm = document.getElementById('checkout-form');
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            let totalPrice = 0;
+
+            // Populate order summary
+            if (orders.length > 0) {
+                orders.forEach(order => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${order.name} - $${order.price}`;
+                    orderList.appendChild(listItem);
+                    totalPrice += parseFloat(order.price);
+                });
+            } else {
+                orderList.innerHTML = '<p>Your order is empty.</p>';
+            }
+             // Style navigation buttons
+             const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733';
+                button.style.borderRadius = '5px';
+            });
+
+            // Update total price
+            totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
+            // Handle form submission
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const customerName = document.getElementById('customer-name').value;
+                const customerEmail = document.getElementById('customer-email').value;
+                const customerAddress = document.getElementById('customer-address').value;
+                const paymentMethod = document.getElementById('payment-method').value;
+
+                if (orders.length === 0) {
+                    alert('Your order is empty!');
+                    return;
+                }
+
+                alert(`Thank you, ${customerName}! Your order has been placed successfully.`);
+
+                // Clear order and localStorage
+                localStorage.removeItem('orders');
+                window.location.href = 'index.html'; // Redirect back to home page
+            });
+        });
+    </script>
+</body>
+</html>

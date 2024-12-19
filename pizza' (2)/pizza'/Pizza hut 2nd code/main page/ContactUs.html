@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pizza Hut Grenada</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="ContactUs.css">
+</head>
+<body>
+    
+  
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza Hut Logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button active">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button active">Review</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="hero" style="background-image: url('image/about\ us\ pg.png')";>
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out with any questions or feedback.</p>
+    </div>
+
+    
+    <main class="content">
+        <section class="section">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, concerns, or just want to share your experience, fill out the form below, and we'll get back to you as soon as possible.</p>
+            
+           
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Pizza Hut Grenada. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+
+  
+    <script>
+        // Style Navigation Buttons
+        const navButtons = document.querySelectorAll('.nav-button');
+        navButtons.forEach(button => {
+            button.style.color = 'white';
+            button.style.padding = '10px 20px';
+            button.style.textDecoration = 'none';
+            button.style.backgroundColor = '#FF5733';
+            button.style.borderRadius = '5px';
+        });
+
+        // Style Form Groups
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            group.style.marginBottom = '20px';
+            group.style.fontFamily = 'Arial, sans-serif';
+            group.style.fontSize = '16px';
+        });
+
+        // JavaScript Feature: Form Submission Confirmation Alert
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from actually submitting
+
+            // Get user input values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation check
+            if (name && email && message) {
+                alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
+                
+                // Clear the form fields after submission
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>

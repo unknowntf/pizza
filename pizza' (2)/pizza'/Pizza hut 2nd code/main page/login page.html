@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login page.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="nav-container">
+                <a href="index.html">
+                    <img src="image/pizza2.jpg"Logo" class="header-logo">
+                </a>
+                <nav>
+                    <ul id="nav-links">
+                        <li><a href="index.html" class="nav-button">Home</a></li>
+                        <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                        <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                        <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                        <li><a href="login page.html" class="nav-button">Login</a></li>
+                        <li><a href="register.html" class="nav-button">Register</a></li>
+                        <li><a href="review.html" class="nav-button">Review</a></li>
+                        <li><a href="my order.html" class="nav-button">My Order</a></li>
+                        <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                        <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                        <li><a href="career.html" class="nav-button">Career</a></li>
+                        <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="submit">Login</button>
+                <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+            </form>
+        </div>
+    </main>
+    <script type="module"> 
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCBg3eQDwwTjNtvVN2HSgutxvL1q4-_lyA",
+  authDomain: "pizza-hut-65cbb.firebaseapp.com",
+  projectId: "pizza-hut-65cbb",
+  storageBucket: "pizza-hut-65cbb.firebasestorage.app",
+  messagingSenderId: "867031268639",
+  appId: "1:867031268639:web:6508d0c4ddaa6a271a042a"
+};
+ // Style navigation buttons
+ const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733';
+                button.style.borderRadius = '5px';
+            });
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const dp= getDatabase(app);
+ document.getElementById("submit").addlistner("click",function(e){
+  set(ref(dp,"user/"+document.getElementById("username").value,{
+    username:document.getElementById("username").value,
+    email:document.getElementById("email").value, 
+  }))
+ })
+        
+</script>
+</body>
+</html>

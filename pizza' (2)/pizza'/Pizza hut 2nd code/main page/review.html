@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hut Reviews</title>
+    <link rel="stylesheet" href="review.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza Hut logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button active">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button">Review</a></li>
+                    <li><a href="my order.html" class="nav-button">My Order</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <main>
+        <section id="review-form-section">
+            <h2>Leave a Review</h2>
+            <form id="review-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="4" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+
+        <section id="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div id="reviews-container">
+                <!-- Sample Reviews -->
+                <div class="review">
+                    <h3>John Doe</h3>
+                    <p>Rating: 5</p>
+                    <p>"The pizza was absolutely amazing! Perfectly cooked crust and delicious toppings. Will order again!"</p>
+                </div>
+                <div class="review">
+                    <h3>Jane Smith</h3>
+                    <p>Rating: 4</p>
+                    <p>"Great service and tasty pizza. The delivery was a bit slow, but it was worth the wait."</p>
+                </div>
+                <div class="review">
+                    <h3>Mike Johnson</h3>
+                    <p>Rating: 3</p>
+                    <p>"Pizza was decent, but could use more sauce. Overall a good experience."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizza Hut. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+    <script>
+        // Select all elements with the 'nav-button' class and style them
+        const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733'; 
+                button.style.borderRadius = '5px';
+            });
+    </script>
+</body>
+</html>

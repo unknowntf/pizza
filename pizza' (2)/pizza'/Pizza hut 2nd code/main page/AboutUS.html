@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pizza Hut Grenada</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza Hut logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUs.html" class="nav-button active">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button active">Review</a></li>
+                    <li><a href="my order.html" class="nav-button">My Order</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="hero" id="heroSection" style="background-image: url('image/about-us-page.png')";>
+        <div class="hero-content">
+            <h1>Welcome to Pizza Hut Grenada</h1>
+            <p>Serving the Spice Isle with the World's Best Pizza Since 2010</p>
+        </div>
+    </div>
+
+    <main class="content">
+      
+        <section class="section">
+            <h2>Our Story</h2>
+            <p>Since opening our doors in Grenada, we've been proud to bring the iconic taste of Pizza Hut to the beautiful Spice Isle. Our journey began with a simple mission: to serve delicious, quality pizzas while creating memorable dining experiences for our valued customers.</p>
+            <p>Located in the heart of St. George's, our restaurant combines Pizza Hut's international standards with local Grenadian hospitality, creating a unique dining experience that celebrates both global flavors and Caribbean charm.</p>
+        </section>
+
+       
+        <section class="section">
+            <h2>Our Values</h2>
+            <div class="values" id="valuesSection">
+                <div class="value-card">
+                    <h3>Quality</h3>
+                    <p>We use only the finest ingredients, ensuring every pizza meets Pizza Hut's global standards of excellence.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Service</h3>
+                    <p>Our team is dedicated to providing warm, friendly service that makes every customer feel like family.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Community</h3>
+                    <p>We're proud to be part of the Grenadian community, supporting local events and initiatives.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Visit Us</h2>
+            <p>Experience the perfect blend of international pizza expertise and Grenadian hospitality at our location:</p>
+            <div class="contact-info">
+                <p>Carenage</p>
+                <p>St. George's, Grenada</p>
+                <p>Phone: (473) 123-4567</p>
+                <p>Email: info@pizzahutgrenada.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Pizza Hut Grenada. All rights reserved.< | <a href="#">Back to Top/p>
+    </footer>
+
+    <script>
+        // Change text color in the "Our Values" section
+        const valueCards = document.querySelectorAll(".value-card h3");
+        valueCards.forEach(function(card) {
+            card.style.color = "#ff5733"; // Change text color to orange
+        });
+
+        // Select all elements with the 'nav-button' class and style them
+        const navButtons = document.querySelectorAll('.nav-button');
+        navButtons.forEach(button => {
+            button.style.color = 'white';
+            button.style.padding = '10px 20px';
+            button.style.textDecoration = 'none';
+            button.style.backgroundColor = '#FF5733'; 
+            button.style.borderRadius = '5px';
+        });
+
+        
+    </script>
+</body>
+</html>

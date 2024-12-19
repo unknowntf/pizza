@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu - Pizza Hut Grenada</title>
+        <link rel="stylesheet" href="Menu.css">
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add item to order functionality
+        document.querySelectorAll('.add-to-order').forEach(button => {
+            button.addEventListener('click', function () {
+                const product = this.getAttribute('data-name');
+                const price = parseFloat(this.getAttribute('data-price'));
+
+                // Retrieve current orders from localStorage or initialize as empty array
+                const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+                // Add new item to orders
+                orders.push({ name: product, price: price });
+
+                // Save the updated orders back to localStorage
+                localStorage.setItem('orders', JSON.stringify(orders));
+
+                alert(`${product} has been added to your order!`);
+            });
+        });
+
+        // Update navigation button styles and page content
+        window.onload = function () {
+            // Change menu link title
+            document.querySelector('nav ul li:nth-child(2) a').textContent = 'Our Menu';
+
+            // Style navigation buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733';
+                button.style.borderRadius = '5px';
+            });
+        };
+    });
+</script>
+
+
+    </head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza hut logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button active">Review</a></li>
+                    <li><a href="my order.html" class="nav-button">My Order</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="menu-container">
+        <h1 class="page-title">Our Menu</h1>
+
+        <section class="menu-section">
+            <h2 class="section-title">Pizzas</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="image/pepperoni-pizza.jpeg" alt="Pepperoni Pizza">
+                    <div class="item-details">
+                        <h3 id="order 1">Pepperoni Pizza</h3>
+                        <p class="price" id="order 1 price">$25.00</p>
+                        <button class="add-to-order" id="saveOrder" data-name="pepperoni-pizza" data-price="25.00">Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="image/VEGGI PIZZA.jpeg" alt="Veggie Pizza">
+                    <div class="item-details">
+                        <h3>Veggie Pizza</h3>
+                        <p class="price">$22.00</p>
+                        <button class="add-to-order" id="saveOrder" data-name="Veggie pizza" data-price="25.00">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Hot Deals</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="image/deals.png" alt="Pizza Deal">
+                    <div class="item-details">
+                        <h3>Large Pizza up to 3 toppings</h3>
+                        <p class="price">$23.00</p>
+                        <button class="add-to-order" data-name="Large Pizza" data-price="23.00">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Sides</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="image/Garkic bread.jpeg" alt="Garlic Bread">
+                    <div class="item-details">
+                        <h3>Garlic Bread</h3>
+                        <p class="price">$10.00</p>
+                        <button class="add-to-order" data-name="Garlic Bread" data-price="10.00">Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="image/wings.jpeg" alt="Chicken Wings">
+                    <div class="item-details">
+                        <h3>Chicken Wings</h3>
+                        <p class="price">$15.00</p>
+                        <button class="add-to-order" data-name="Chicken wings" data-price="15.00">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="image/soft drinks.jpeg" alt="Soft Drinks">
+                    <div class="item-details">
+                        <h3>Soft Drinks</h3>
+                        <p class="price">$3.00</p>
+                        <button class="add-to-order" data-name="Soft Drinks" data-price="3.00">Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="image/alcholic drinks beverages.jpeg" alt="Alcoholic Drinks">
+                    <div class="item-details">
+                        <h3>Alcoholic Drinks</h3>
+                        <p class="price">$5.00</p>
+                        <button class="add-to-order" data-name="Alcoholic Drinks" data-price="5.00">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="image/cookie pizza.jpeg" alt="Cookie Pizza">
+                    <div class="item-details">
+                        <h3>Cookie Pizza</h3>
+                        <p class="price">$8.00</p>
+                        <button class="add-to-order" data-name="Cookie Pizza" data-price="8.00">Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="image/apple dessert pizza.jpeg" alt="Apple Dessert Pizza">
+                    <div class="item-details">
+                        <h3>Apple Dessert Pizza</h3>
+                        <p class="price">$10.00</p>
+                        <button class="add-to-order" data-name="Apple Dessert Pizza" data-price="10.00">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Pizza Hut Grenada. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+   
+    
+</body>
+</html>

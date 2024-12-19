@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hut Grenada</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="Main page.css">
+    
+    
+    
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="image/pizza2.jpg" alt="Pizza Hut logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button active">Home</a></li>
+                    <li><a href="Menu.html" class="nav-button">Menu</a></li>
+                    <li><a href="AboutUS.html" class="nav-button">About Us</a></li>
+                    <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+                    <li><a href="login page.html" class="nav-button">Login</a></li>
+                    <li><a href="register.html" class="nav-button">Register</a></li>
+                    <li><a href="review.html" class="nav-button active">Review</a></li>
+                    <li><a href="review.html" class="nav-button active">Review</a></li>
+                    <li><a href="checkout.html" class="nav-button">Checkout</a></li>
+                    <li><a href="terms n policies.html" class="nav-button">Terms and Policies</a></li>
+                    <li><a href="career.html" class="nav-button">Career</a></li>
+                    <li><a href="Apply now.html" class="nav-button"> Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: url('image/abt us.jpeg');">
+        <div class="hero-content">
+            <h1>Welcome to Pizza Hut Grenada</h1>
+            <a href="Menu.html" class="order-now">Order Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Pizza Hut Grenada. All rights reserved. | <a href="#">Back to Top</p>
+    </footer>
+    <script>
+     
+        window.onload = function() {
+            // Change the hero heading text
+            document.querySelector('.hero h1').textContent = 'Welcome to Pizza Hut Grenada - Order Now!';
+            
+            // Change the "Order Now" button text
+            document.querySelector('.order-now').textContent = 'Click Here to Order!';
+            
+            // Change the "Menu" navigation link text
+            document.querySelector('nav ul li:nth-child(2) a').textContent = 'Our Menu';
+            
+            // Change the footer text
+            document.querySelector('.footer p').textContent = '© 2024 Pizza Hut Grenada. All Rights Reserved. New slogan coming soon!';
+            
+            // Select all elements with the 'nav-button' class and style them
+            const navButtons = document.querySelectorAll('.nav-button');
+    
+            navButtons.forEach(button => {
+                button.style.color = 'white';
+                button.style.padding = '10px 20px';
+                button.style.textDecoration = 'none';
+                button.style.backgroundColor = '#FF5733'; 
+                button.style.borderRadius = '5px';
+            });
+        }; 
+    
+    </script>
+    
+</body>
+</html>
